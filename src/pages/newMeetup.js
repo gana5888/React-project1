@@ -7,18 +7,18 @@ function NewMeetup() {
     const history = useNavigate();
 
     function addMeetupHandler(meetupData) {
-        // fetch(
-        //   'https://react-getting-started-48dec-default-rtdb.firebaseio.com/meetups.json',
-        //   {
-        //     method: 'POST',
-        //     body: JSON.stringify(meetupData),
-        //     headers: {
-        //       'Content-Type': 'application/json',
-        //     },
-        //   }
-        // ).then(() => {
+        fetch(
+            'http://localhost:2500/meetup',
+            {
+            method: 'POST',
+            body: JSON.stringify(meetupData),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        ).then(() => {
           history('/');
-        // });
+        });
         console.log('mmeetupData',meetupData);
     }
 
